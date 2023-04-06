@@ -14,7 +14,7 @@ function subtraction_Function() { //subtracting//
 
 function multiplication() { //mulitply//
     var simple_math = 3 * 4;
-    document,getElementById ("mulitply").innerHTML = "3 * 4 = " + simple_math;
+    document.getElementById ("mulitply").innerHTML = "3 * 4 = " + simple_math;
 }
 
 function division() { //divide//
@@ -48,3 +48,14 @@ document.write(X);
 window.alert(Math.random()); //random number//
 
 document.getElementById("Pi").innerHTML = Math.PI;
+
+function my_Dictionary() {
+    var Animal = { 
+        Species:"Dog",
+        Color:"Black",
+        Breed:"Lab",
+        Age:4,
+        Sound:"Woof!"
+    };
+document.getElementById("Dictionary").innerHTML = ANimal.Sound;
+}
