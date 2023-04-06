@@ -7,3 +7,5 @@ function myFunction() {
     sentence += "This is the other sentence!";
     document.getElementById("Concatenate") .innerHTML = sentence;
 }
+
+document.getElementById("test").style.color = "green";
