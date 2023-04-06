@@ -1,10 +1,11 @@
 function my_Dictionary() {
-    var Animal = { 
-        Species:"Dog",
+    var Amimal = { 
+        Species:"Cat",
         Color:"Black",
-        Breed:"Lab",
+        Breed:"Persian",
         Age:4,
-        Sound:"Woof!"
+        Sound:"Meow!"
     };
-document.getElementById("Dictionary").innerHTML = Animal.Sound;
+    delete Animal.Sound;
+    document.getElementById("Dictionary").innerHTML = Animal.Sound;
 }
