@@ -1,5 +1,5 @@
-var C = "testing testing testing"
-var dogs = "different dogs", Husky = "Husky", Lab = "Labrador", Poodle = "Poodle"
+var C = "testing testing testing" // a variable //
+var dogs = "different dogs", Husky = "Husky", Lab = "Labrador", Poodle = "Poodle" //listing different variables//
 document.write(C);
 document.write(Lab);
 function myFunction() {
