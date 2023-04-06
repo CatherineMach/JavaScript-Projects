@@ -36,3 +36,13 @@ function negation_Operator() {
     var x = 10;
     document.getElementById("negitive").innerHTML = -x;
 }
+
+var X = 5;
+X++;
+document.write(X);
+
+var X = 5.25;
+X--;
+document.write(X);
+
+window.alert(Math.random());
