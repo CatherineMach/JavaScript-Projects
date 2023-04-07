@@ -1,5 +1,5 @@
 function my_Dictionary() {
-    var Amimal = { 
+    var Animal = { 
         Species:"Cat",
         Color:"Black",
         Breed:"Persian",
