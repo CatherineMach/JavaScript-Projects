@@ -33,3 +33,7 @@ function Add_numbers_2() {
 Add_numbers_1();
 Add_numbers_2();
 //End Console Method//
+
+if (1 < 2) {
+    document.write("The left number is smaller than the number on the right.")
+}
