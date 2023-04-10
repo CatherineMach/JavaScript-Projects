@@ -21,7 +21,7 @@ function myFunction() {
 }
 
 function Nested_Function() {
-    document.getElementById("Nested").innerHTML = Count();
+    document.getElementById("Nested_Function").innerHTML = Count();
     function Count() {
         var Starting_point = 9;
         function Plus_one() {Starting_point += 1;}
