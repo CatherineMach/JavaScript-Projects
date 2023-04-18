@@ -108,19 +108,19 @@ function checkWinConditions() {
         //this function sets a .3 second timer before the resetGame is called
         setTimeout(function () { resetGamme(); }, 500);
     }
-    
+    //this function checks if an array includes 3 strings. It is used to check for
+    //each win condition
+    function arrayIncludes(squareA, squareB, squarec) {
+        //these 3 variables will be used to check for 3 in a row
+        const a = selectedSquares.includes(squareA);
+        const b = selectedSquares.includes(squareB);
+        const c = selectedSquares.includes(squareC);
+        //if the 3 variables we pass are all included in our array them
+        //true is returned and our else if condition executes the drawLine() function
+        if (a === true && b === true && c === true) { return true;}
+    }   
 }
-//this function checks if an array includes 3 strings. It is used to check for
-//each win condition
-function arrayIncludes(squareA, squareB, squarec) {
-    //these 3 variables will be used to check for 3 in a row
-    const a = selectedSquares.includes(squareA);
-    const b = selectedSquares.includes(squareB);
-    const c = selectedSquares.includes(squareC);
-    //if the 3 variables we pass are all included in our array them
-    //true is returned and our else if condition executes the drawLine() function
-    if (a === true && b === true && c === true) { return true;}
-}
+
 //this function makes our body element temporarily unclickable
 function disableClick() {
     //this makes our body unclickable
@@ -210,7 +210,7 @@ function animateLineDrawing() {
 //this function resets the game in the event of a tie or a win
 function resetGame() {
     //this for loop iterates through each HTML square element
-    for (let i = 0; i < 9; 1++) {
+    for (let i = 0; i < 9; i++) {
         //this variable gets the HTML element i
         let square = document.getElementById(String(i));
         //this removes our elements backgroundImage
