@@ -61,9 +61,9 @@ function placeXOrO(squareNumber) {
                     placeXOrO(pickASquare);
                     //this changes our boolean and ends the loop
                     success = true;
-                };
-             }
-    }
+                 };
+            }
+        }
 }
 //this function parses the selectedSquares array to search for win conditions
 //drawLine() function is called to draw a line on the screen if the condition is met
@@ -106,11 +106,11 @@ function checkWinConditions() {
         //this function plays the tie game sound
         audio('./media/tie.mp3');
         //this function sets a .3 second timer before the resetGame is called
-        setTimeout(function () { resetGamme(); }, 500);
+        setTimeout(function () { resetGame(); }, 500);
     }
     //this function checks if an array includes 3 strings. It is used to check for
     //each win condition
-    function arrayIncludes(squareA, squareB, squarec) {
+    function arrayIncludes(squareA, squareB, squareC) {
         //these 3 variables will be used to check for 3 in a row
         const a = selectedSquares.includes(squareA);
         const b = selectedSquares.includes(squareB);
@@ -156,31 +156,31 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     x = x1,
     //this variable stores temporary y axis data we update in our animation loop
     y = y1;
-}
-//function interests with the canvas
-function animateLineDrawing() {
-    //this variable creates a loop
-    const animationLoop = requestAnimationFrame(animateLineDrawing);
-    //this method clears content from the last loop iteration
-    c.clearRect(0, 0, 608, 608);
-    //this method starts a new path
-    c.beginPath();
-    //this method moves us to a starting point in our line
-    c.moveTo(x1, y1);
-    //this method indicates the end point in our line
-    c.lineTo(x, y);
-    //this method sets width of our line
-    c.lineWidth = 10;
-    //this method sets the color of our line
-    c.strokeStyle = 'rgba(70, 255, 33, .8)';
-    //this method draws everything we laid out above
-    c.stroke();
-    //this condition checks if we've reached the endpoints
-    if (x1 <= x2 && y1 <= y2) {
-        //this condition adds 10 to the previous end y endpoint
-        if (x < x2) { x += 10; }
-        //this condition adds 10 to the previous end y endpoint
-        if (y < y2) { y += 10; }
+    //function interests with the canvas
+    function animateLineDrawing() {
+        //this variable creates a loop
+        const animationLoop = requestAnimationFrame(animateLineDrawing);
+        //this method clears content from the last loop iteration
+        c.clearRect(0, 0, 608, 608);
+        //this method starts a new path
+        c.beginPath();
+        //this method moves us to a starting point in our line
+        c.moveTo(x1, y1);
+        //this method indicates the end point in our line
+        c.lineTo(x, y);
+        //this method sets width of our line
+        c.lineWidth = 10;
+        //this method sets the color of our line
+        c.strokeStyle = 'rgba(70, 255, 33, .8)';
+        //this method draws everything we laid out above
+        c.stroke();
+        //this condition checks if we've reached the endpoints
+        if (x1 <= x2 && y1 <= y2) {
+            //this condition adds 10 to the previous end y endpoint
+            if (x < x2) { x += 10; }
+            //this condition adds 10 to the previous end y endpoint
+            if (y < y2) { y += 10; }
+        }
         //this condition is similar to the one above
         //this is necessary for the 6, 4, 2 win condition
         if (x1 <= x2 && y1 >= y2) {
@@ -188,6 +188,7 @@ function animateLineDrawing() {
             if (y > y2) {y -= 10; }
             if (x >= x2 && y <= y2) { cancelAnimationFrame(animationLoop); }
         }
+    }          
         //this function clears our canvas after our win line is drawn
     function clear() {
         //this line starts our animation loop
@@ -197,16 +198,16 @@ function animateLineDrawing() {
         //this line stops our animation loop
         cancelAnimationFrame(animationLoop);
     }
-        //this line disallows clicking while the win sound is playing
-        disableClick();
-        //this line plays the win sounds
-        audio('./media/winGame.mp3');
-        //this line calls our main animation loop
-        animateLineDrawing();
-        //this line waits 1 second then clears canvas, resets game, an allows clicking again
-        setTimeout(function () { clear(); resetGame();}, 1000);
-    }
+    //this line disallows clicking while the win sound is playing
+    disableClick();
+    //this line plays the win sounds
+    audio('./media/winGame.mp3');
+    //this line calls our main animation loop
+    animateLineDrawing();
+    //this line waits 1 second then clears canvas, resets game, an allows clicking again
+    setTimeout(function () { clear(); resetGame(); }, 1000);   
 }
+
 //this function resets the game in the event of a tie or a win
 function resetGame() {
     //this for loop iterates through each HTML square element
@@ -214,7 +215,7 @@ function resetGame() {
         //this variable gets the HTML element i
         let square = document.getElementById(String(i));
         //this removes our elements backgroundImage
-        square.style.backgroundImage = ' ';
+        square.style.backgroundImage = '';
     }
     //this resets our array so it is empty and we can start over
     selectedSquares = [];
