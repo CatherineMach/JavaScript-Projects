@@ -13,3 +13,9 @@ function validateForm() {
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
   }
+
+  $('.fadein img:gt(0)').hide();
+  setInterval(function(){ },3000);
+  $('.fadein :first-child').fadeOut()
+  .next('img').fadeIn()
+  .end().appendTo('.fadein')
