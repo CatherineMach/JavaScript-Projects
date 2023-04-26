@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS/Calculator_CSS.css">
+        <script src="./JavaScript/Challenges.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <h1 style="font-size:3vw;">This website will be used for the JavaScript end course challenges</h1>
+        
+    </head>
+
+    <body>
+        <div class="w3-container w3-center w3-animate-opacity">
+             <h3>I will be talking about random things just so I can complete and pass the specific challenge</h3>   
+        </div>
+
+        <h1>@keyframes rule</h1>
+        <div></div>
+        
+        <button class="open-button" onclick="openForm()">Open form</button>
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <h1>Login</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+        
+        
+        
+        
+        
+        
+        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+    <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe">
+    <label for="pnumber">Phone Number:</label><br>
+        <input type="text" id="pnumber" name="pnumber" value="(123)-456-7890">
+        <input type="submit" value="Submit">        
+
+    </form>
+                        
+
+
+    </body>
+</html>
