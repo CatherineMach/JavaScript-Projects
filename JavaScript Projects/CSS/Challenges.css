@@ -69,13 +69,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
     opacity: 1;
   }
 
-  div {
-    width: 100px;
-    height: 100px;
-    background: red;
-    position: relative;
-    animation: mymove 5s infinite;
-  }
   
   @keyframes mymove {
     from {top: 0px;}
@@ -87,20 +80,36 @@ body {font-family: Arial, Helvetica, sans-serif;}
     width: 50px;
     height: 50px;
     background: #f50057;
-    animation: zoom-in-zoom-out 1s ease infinite;
+    animation: zoom-in-zoom-out 4s ease infinite;
   }
   
   @keyframes zoom-in-zoom-out {
     0% {
-      transform: scale(1, 1);
+      transform: translateY(0);
     }
     50% {
-      transform: scale(1.5, 1.5);
+      transform: translateY(200px);
     }
     100% {
-      transform: scale(1, 1);
+      transform: translateY(0);
     }
   }
+
+  @keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+.fadein img {
+	animation: zoominoutsinglefeatured 15s forwards;
+}
   
   html {
     scroll-behavior: smooth;
@@ -135,4 +144,21 @@ body {font-family: Arial, Helvetica, sans-serif;}
     background-color: yellow;
     padding: 50px;
     font-size: 20px;
+  }
+
+  #slideshow { 
+    margin: 50px auto; 
+    position: relative; 
+    width: 240px; 
+    height: 240px; 
+    padding: 10px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+  }
+  
+  #slideshow > div { 
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    right: 10px; 
+    bottom: 10px; 
   }
